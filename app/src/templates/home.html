@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>F-MNIST Classifier</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-------------------------------------------- Navigation Bar --------------------------------------------------------------->
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="nav-time nav-link text-white">Fashion MNIST Image Classifier</div>
+	</nav>
+	<!-------------------------------------------------------------------------------------------------------------------------->
+    <div class="container mt-5">
+        <form action="" method="post" enctype = "multipart/form-data">
+            <h1>Please choose an image.</h1>
+            <input class="mt-4" type="file" name="input_image" value="Choose file">
+            <input class="btn btn-light" type="submit">
+        </form>
+    </div>
+    {% if msg %}
+        <div class="row justify-content-center">
+            <p class='error'>{{msg}}
+        </div>
+    {% endif %}
+</body>
+</html>
