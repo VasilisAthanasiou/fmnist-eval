@@ -1,28 +1,22 @@
 import tensorflow as tf
 import numpy as np
 from app.src.classifier import mnist_reader
-from matplotlib import pyplot as plt
 from time import time
 
 # ------------------------------------------ Dataset operations ---------------------------------------------------------------------------------------------- #
-def load_dataset(path='data/fashion'):
+def load_dataset(path='data/fashion', normalize=True):
     """
     Uses the load_mnist method from mnist_reader.py to split f-mnist data into train/test data and labels
     :param path: path to dataset
     :return: xtrain, ytrain, xtest, ytest
     """
+
     xtrain, ytrain = mnist_reader.load_mnist(path, kind='train')  # Extract f-mnist data using load_mnist from the mnist repository
     xtest, ytest = mnist_reader.load_mnist(path, kind='t10k')  # https://github.com/zalandoresearch/fashion-mnist
-    # Normalize
-    xtrain, xtest = xtrain / 255.0, xtest / 255.0
+    if normalize:
+        # Normalize
+        xtrain, xtest = xtrain / 255.0, xtest / 255.0
     return xtrain, ytrain, xtest, ytest
-
-
-def print_images(images):
-    for i in range(9):
-        plt.subplot(331 + i)
-        plt.imshow(images[i], cmap=plt.get_cmap('gray'))
-    plt.show()
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -164,3 +158,4 @@ def train_and_infer(model, x_train, y_train, x_test, y_test, epochs=10, train_sa
 
     return acc, train_time, average_inf_time
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+

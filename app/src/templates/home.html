@@ -15,13 +15,32 @@
         <form action="" method="post" enctype = "multipart/form-data">
             <h1>Please choose an image.</h1>
             <input class="mt-4" type="file" name="input_image" value="Choose file">
+            <br>
+            <label class="mt-3" for="is_processed">Is the image already processed?</label>
+            <input type="checkbox" id='is_processed' name="is_processed" value="0">
+            <br>
+            <label class="mt-2" for="k_top">Number of top related products</label>
+            <input type="number" id="k_top" name="k_top" value="5">
+            <br>
             <input class="btn btn-light" type="submit">
         </form>
+        {% if category %}
+            <img src="{{url_for('static', filename=image_name)}}">
+            <br>
+            <div class="mt-5">
+                <h3>{{category}}</h3>
+            </div><br>
+            <div>
+                <h3>{{description}}</h3>
+            </div>
+            <br>
+            <div>
+                <h4>Top related images</h4>
+            </div>
+            <img src="{{url_for('static', filename=top_images_name)}}">
+            <br>
+        {% endif %}
     </div>
-    {% if msg %}
-        <div class="row justify-content-center">
-            <p class='error'>{{msg}}
-        </div>
-    {% endif %}
+
 </body>
 </html>
