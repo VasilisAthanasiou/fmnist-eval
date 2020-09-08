@@ -1,0 +1,71 @@
+--------------------------------- Layer Evaluation - | 128 neurons per layer | 10 epochs | 60000 training samples -----------------------
+For 1 hidden layers, the network achieved 87.33% classification accuracy, with 18.61s training time and 0.02s average inference time
+For 2 hidden layers, the network achieved 88.44% classification accuracy, with 20.67s training time and 0.03s average inference time
+For 3 hidden layers, the network achieved 87.75% classification accuracy, with 25.19s training time and 0.02s average inference time
+For 4 hidden layers, the network achieved 87.88% classification accuracy, with 24.91s training time and 0.03s average inference time
+For 5 hidden layers, the network achieved 88.18% classification accuracy, with 29.23s training time and 0.02s average inference time
+For 6 hidden layers, the network achieved 88.19% classification accuracy, with 32.86s training time and 0.03s average inference time
+For 7 hidden layers, the network achieved 88.17% classification accuracy, with 30.30s training time and 0.02s average inference time
+For 8 hidden layers, the network achieved 87.82% classification accuracy, with 36.71s training time and 0.03s average inference time
+For 9 hidden layers, the network achieved 87.07% classification accuracy, with 37.31s training time and 0.02s average inference time
+For 10 hidden layers, the network achieved 87.79% classification accuracy, with 37.64s training time and 0.02s average inference time
+-----------------------------------------------------------------------------------------------------------------------------
+-------------------------------- Neuron Evaluation - | 2 hidden layers | 10 epochs | 60000 training samples ----------------------------
+For 2 neurons per layer, the network achieved 38.30% classification accuracy, with 12.88s training time and 0.02s average inference time
+For 4 neurons per layer, the network achieved 74.88% classification accuracy, with 13.74s training time and 0.03s average inference time
+For 8 neurons per layer, the network achieved 83.93% classification accuracy, with 13.15s training time and 0.02s average inference time
+For 16 neurons per layer, the network achieved 85.85% classification accuracy, with 13.24s training time and 0.02s average inference time
+For 32 neurons per layer, the network achieved 87.33% classification accuracy, with 14.03s training time and 0.02s average inference time
+For 64 neurons per layer, the network achieved 88.29% classification accuracy, with 14.59s training time and 0.02s average inference time
+For 128 neurons per layer, the network achieved 87.86% classification accuracy, with 18.55s training time and 0.02s average inference time
+For 256 neurons per layer, the network achieved 88.26% classification accuracy, with 32.39s training time and 0.02s average inference time
+For 512 neurons per layer, the network achieved 88.48% classification accuracy, with 99.10s training time and 0.02s average inference time
+For 1024 neurons per layer, the network achieved 88.65% classification accuracy, with 274.05s training time and 0.02s average inference time
+-----------------------------------------------------------------------------------------------------------------------------
+-------------------------------- Epoch Evaluation - | 2 hidden layers | 128 neurons per layer | 60000 training samples ----------------------------
+For 1 gradient-descent epochs, the network achieved 84.25% classification accuracy, with 2.47s training time and 0.02s average inference time
+For 2 gradient-descent epochs, the network achieved 86.39% classification accuracy, with 4.26s training time and 0.02s average inference time
+For 3 gradient-descent epochs, the network achieved 86.08% classification accuracy, with 6.15s training time and 0.02s average inference time
+For 4 gradient-descent epochs, the network achieved 86.17% classification accuracy, with 7.47s training time and 0.02s average inference time
+For 5 gradient-descent epochs, the network achieved 86.64% classification accuracy, with 9.67s training time and 0.02s average inference time
+For 6 gradient-descent epochs, the network achieved 87.93% classification accuracy, with 11.73s training time and 0.02s average inference time
+For 7 gradient-descent epochs, the network achieved 88.12% classification accuracy, with 13.24s training time and 0.02s average inference time
+For 8 gradient-descent epochs, the network achieved 87.83% classification accuracy, with 15.07s training time and 0.02s average inference time
+For 9 gradient-descent epochs, the network achieved 88.13% classification accuracy, with 16.64s training time and 0.02s average inference time
+For 10 gradient-descent epochs, the network achieved 88.38% classification accuracy, with 18.87s training time and 0.02s average inference time
+-----------------------------------------------------------------------------------------------------------------------------
+-------------------------------- Training Sample size Evaluation - | 2 hidden layers | 128 neurons per layer | 10 epochs ----------------------------
+For 6000 training samples, the network achieved 84.19% classification accuracy, with 4.12s training time and 0.02s average inference time
+For 12000 training samples, the network achieved 84.67% classification accuracy, with 5.64s training time and 0.02s average inference time
+For 18000 training samples, the network achieved 86.37% classification accuracy, with 7.14s training time and 0.02s average inference time
+For 24000 training samples, the network achieved 86.53% classification accuracy, with 8.88s training time and 0.02s average inference time
+For 30000 training samples, the network achieved 86.63% classification accuracy, with 10.52s training time and 0.02s average inference time
+For 36000 training samples, the network achieved 87.53% classification accuracy, with 12.13s training time and 0.02s average inference time
+For 42000 training samples, the network achieved 88.17% classification accuracy, with 14.19s training time and 0.02s average inference time
+For 48000 training samples, the network achieved 87.77% classification accuracy, with 15.75s training time and 0.02s average inference time
+For 54000 training samples, the network achieved 87.90% classification accuracy, with 17.32s training time and 0.02s average inference time
+For 60000 training samples, the network achieved 88.45% classification accuracy, with 18.33s training time and 0.02s average inference time
+-----------------------------------------------------------------------------------------------------------------------------
+-------------------------------- Epoch Evaluation - | 2 hidden layers | 128 neurons per layer | 60000 training samples ----------------------------
+For 1 gradient-descent epochs, the network achieved 85.31% classification accuracy, with 4.69s training time and 0.03s average inference time
+For 2 gradient-descent epochs, the network achieved 86.96% classification accuracy, with 4.76s training time and 0.03s average inference time
+For 3 gradient-descent epochs, the network achieved 87.02% classification accuracy, with 10.80s training time and 0.03s average inference time
+For 4 gradient-descent epochs, the network achieved 87.17% classification accuracy, with 11.74s training time and 0.03s average inference time
+For 5 gradient-descent epochs, the network achieved 86.87% classification accuracy, with 15.64s training time and 0.03s average inference time
+For 6 gradient-descent epochs, the network achieved 87.99% classification accuracy, with 19.59s training time and 0.03s average inference time
+For 7 gradient-descent epochs, the network achieved 87.72% classification accuracy, with 16.56s training time and 0.03s average inference time
+For 8 gradient-descent epochs, the network achieved 88.07% classification accuracy, with 19.84s training time and 0.02s average inference time
+For 9 gradient-descent epochs, the network achieved 88.55% classification accuracy, with 18.82s training time and 0.02s average inference time
+For 10 gradient-descent epochs, the network achieved 87.73% classification accuracy, with 22.48s training time and 0.03s average inference time
+For 11 gradient-descent epochs, the network achieved 88.32% classification accuracy, with 20.36s training time and 0.03s average inference time
+For 12 gradient-descent epochs, the network achieved 87.69% classification accuracy, with 24.95s training time and 0.03s average inference time
+For 13 gradient-descent epochs, the network achieved 88.82% classification accuracy, with 29.74s training time and 0.03s average inference time
+For 14 gradient-descent epochs, the network achieved 88.29% classification accuracy, with 28.90s training time and 0.03s average inference time
+For 15 gradient-descent epochs, the network achieved 89.02% classification accuracy, with 29.37s training time and 0.02s average inference time
+For 16 gradient-descent epochs, the network achieved 88.75% classification accuracy, with 32.80s training time and 0.02s average inference time
+For 17 gradient-descent epochs, the network achieved 88.67% classification accuracy, with 37.96s training time and 0.03s average inference time
+For 18 gradient-descent epochs, the network achieved 88.37% classification accuracy, with 42.99s training time and 0.03s average inference time
+For 19 gradient-descent epochs, the network achieved 89.12% classification accuracy, with 40.32s training time and 0.03s average inference time
+For 20 gradient-descent epochs, the network achieved 88.70% classification accuracy, with 45.68s training time and 0.02s average inference time
+-----------------------------------------------------------------------------------------------------------------------------
+
