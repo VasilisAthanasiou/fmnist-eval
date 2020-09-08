@@ -4,6 +4,9 @@
 ### Requirements
 - Tensorflow
 - [MNIST Dataset](`https://github.com/zalandoresearch/fashion-mnist`)
+- Matplotlib
+- OpenCV
+- Flask
 
 ### Goals
 1. Train and Evaluate multiple Neural Nets that differ in:<br>- Number of hidden layers<br>- Number of perceptrons<br>- Training set size<br>- Gradient descent iterations

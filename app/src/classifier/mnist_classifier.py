@@ -1,7 +1,8 @@
 import tensorflow as tf
 import numpy as np
-from app.src.classifier import mnist_reader
+from src.classifier import mnist_reader
 from time import time
+
 
 # ------------------------------------------ Dataset operations ---------------------------------------------------------------------------------------------- #
 def load_dataset(path='data/fashion', normalize=True):
@@ -18,6 +19,7 @@ def load_dataset(path='data/fashion', normalize=True):
         xtrain, xtest = xtrain / 255.0, xtest / 255.0
     return xtrain, ytrain, xtest, ytest
 
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # --------------------------------------------------- Create Neural Network ---------------------------------------------------------------------------------- #
@@ -33,6 +35,7 @@ def net_init():
         tf.keras.layers.Dense(128, activation='relu'),
         tf.keras.layers.Dense(10)
     ])
+
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -60,6 +63,8 @@ def generate_net(hidden_layers=2, n_neurons=128):
     model.summary()
 
     return model
+
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # ------------------------------------------- Evaluate Multiple Different Neural Networks -------------------------------------------------------------------- #
@@ -84,14 +89,17 @@ def evaluate_nets(x_train, y_train, x_test, y_test, eval_layers=False, eval_neur
     n_neurons = 128
     epochs = 10
 
-
     # Examine different hidden layer configurations
     if eval_layers:
         file.write('--------------------------------- Layer Evaluation - | 128 neurons per layer | 10 epochs | 60000 training samples -----------------------\n')
         for h_layers in range(n_nets):
             model = generate_net(hidden_layers=h_layers + 1)  # Initialize network
             acc, train_time, average_inf_time = train_and_infer(model, x_train, y_train, x_test, y_test, epochs)  # Train and infer network
-            file.write('For {} hidden layers, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(h_layers + 1, acc * 100, train_time, average_inf_time))
+            file.write(
+                'For {} hidden layers, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(h_layers + 1,
+                                                                                                                                                                     acc * 100,
+                                                                                                                                                                     train_time,
+                                                                                                                                                                     average_inf_time))
         file.write('-----------------------------------------------------------------------------------------------------------------------------\n')
         model = None
         h_layers = 2
@@ -102,7 +110,11 @@ def evaluate_nets(x_train, y_train, x_test, y_test, eval_layers=False, eval_neur
             n_neurons = 2 ** (neuron_multiplier + 1)  # Each iteration the number of neurons is a power of 2
             model = generate_net(n_neurons=n_neurons)  # Initialize network
             acc, train_time, average_inf_time = train_and_infer(model, x_train, y_train, x_test, y_test, epochs)  # Train and infer network
-            file.write('For {} neurons per layer, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(n_neurons, acc * 100, train_time, average_inf_time))
+            file.write(
+                'For {} neurons per layer, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(n_neurons,
+                                                                                                                                                                         acc * 100,
+                                                                                                                                                                         train_time,
+                                                                                                                                                                         average_inf_time))
         file.write('-----------------------------------------------------------------------------------------------------------------------------\n')
         model = None
         n_neurons = 128
@@ -111,7 +123,9 @@ def evaluate_nets(x_train, y_train, x_test, y_test, eval_layers=False, eval_neur
         for epochs in range(n_nets):
             model = generate_net()
             acc, train_time, average_inf_time = train_and_infer(model, x_train, y_train, x_test, y_test, epochs + 1)  # Train and infer network
-            file.write('For {} gradient-descent epochs, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(epochs + 1, acc * 100, train_time, average_inf_time))
+            file.write(
+                'For {} gradient-descent epochs, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(
+                    epochs + 1, acc * 100, train_time, average_inf_time))
         file.write('-----------------------------------------------------------------------------------------------------------------------------\n')
         model = None
         epochs = 10
@@ -121,10 +135,12 @@ def evaluate_nets(x_train, y_train, x_test, y_test, eval_layers=False, eval_neur
             train_samples = int(len(x_train) * (train_ratio + 1) / 10)
             model = generate_net()
             acc, train_time, average_inf_time = train_and_infer(model, x_train, y_train, x_test, y_test, epochs, train_samples)  # Train and infer network
-            file.write('For {} training samples, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(train_samples, acc * 100, train_time, average_inf_time))
+            file.write('For {} training samples, the network achieved {:.2f}% classification accuracy, with {:.2f}s training time and {:.2f}s average inference time\n'.format(
+                train_samples, acc * 100, train_time, average_inf_time))
         file.write('-----------------------------------------------------------------------------------------------------------------------------\n')
         model = None
     file.close()
+
 
 def train_and_infer(model, x_train, y_train, x_test, y_test, epochs=10, train_samples=60000):
     """
@@ -158,4 +174,3 @@ def train_and_infer(model, x_train, y_train, x_test, y_test, epochs=10, train_sa
 
     return acc, train_time, average_inf_time
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
